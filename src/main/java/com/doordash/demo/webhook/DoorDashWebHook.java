@@ -7,6 +7,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,7 +20,7 @@ public class DoorDashWebHook {
     }
 
     @PostMapping("/web")
-    ResponseEntity<HttpStatus> testWebHook(DoorDashEvent event) throws JsonProcessingException {
+    ResponseEntity<HttpStatus> testWebHook(@RequestBody DoorDashEvent event) throws JsonProcessingException {
         log.info("event recieved {}", objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(event));
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
