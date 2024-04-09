@@ -19,7 +19,7 @@ public class DoorDashWebHook {
     }
 
     @PostMapping("/web")
-    ResponseEntity<HttpStatus> testWebHook(DoorDashLiveEvent event) throws JsonProcessingException {
+    ResponseEntity<HttpStatus> testWebHook(DoorDashEvent event) throws JsonProcessingException {
         log.info("event recieved {}", objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(event));
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }

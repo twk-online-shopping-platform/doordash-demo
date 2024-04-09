@@ -49,6 +49,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<version>2.13.0</version>
+				<configuration>
+					<schemaVersion>v2</schemaVersion>
+					<resourceGroup>twk-student-default-rgrp</resourceGroup>
+					<appName>kinadrdwebhook</appName>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
